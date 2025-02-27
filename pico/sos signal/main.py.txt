@@ -1,0 +1,44 @@
+from machine import Pin
+from time import sleep
+
+redLED=Pin(0,Pin.OUT)
+
+# for a sos signal 3 short flashes 3 long 
+#  then again 3 short flashes
+
+def send_sos():
+      # 3 short flashes
+    for _ in range(3):
+          redLED.value(1)
+          sleep(.1)
+          redLED.value(0)
+          sleep(.1)
+    
+     # 3 long flashes
+    for _ in range(3):
+          redLED.value(1)
+          sleep(.3)
+          redLED.value(0)
+          sleep(.3)
+
+      # 3 short flashes
+    for _ in range(3):
+          redLED.value(1)
+          sleep(.1)
+          redLED.value(0)
+          sleep(.1)
+
+while True:
+    send_sos()
+    sleep(1)
+    
+
+   
+
+
+    
+   
+
+  
+   
+   

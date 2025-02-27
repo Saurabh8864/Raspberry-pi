@@ -1,0 +1,15 @@
+from machine import Pin
+import  time
+
+# Define LEDs
+leds = [Pin(18, Pin.OUT), Pin(19, Pin.OUT), Pin(20, Pin.OUT), Pin(21, Pin.OUT)]
+
+counter = 0  # Start from 0
+
+while True:
+    # Set LEDs based on binary of counter
+    for i in range(4):
+        leds[i].value((counter >> i) & 1)
+    
+    counter = (counter + 1) % 16  # Loop from 0 to 15
+    time.sleep(1)  # Wait 1 second

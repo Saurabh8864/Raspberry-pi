@@ -1,0 +1,20 @@
+from machine import Pin
+from time import sleep
+
+redLED=Pin(0,Pin.OUT)
+while True:
+    redLED.value(0)
+    sleep(1)
+    redLED.value(1)
+    sleep(2)
+   
+
+using toggle method
+
+from machine import Pin
+from time import sleep
+
+redLED=Pin(0,Pin.OUT)
+while True:
+    redLED.toggle()
+    sleep(.1)
